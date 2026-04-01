@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --glass-bg: rgba(255,255,255,0.05);
+  --glass-border: rgba(255,255,255,0.1);
+  --accent: #00ff9d;
+  --accent2: #7b61ff;
+  --accent3: #00c8ff;
+  --text-main: #e8eaf0;
+  --text-muted: rgba(232,234,240,0.45);
+  --bg1: #080b12;
+  --bg2: #0d1117;
+  --card-bg: rgba(13,17,23,0.8);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg1);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Background effects */
+.bg-mesh {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 50% at 10% 20%, rgba(0,255,157,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 85% 75%, rgba(123,97,255,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(0,200,255,0.04) 0%, transparent 55%);
+}
+
+.bg-grid {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0,255,157,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,157,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Cursor blink animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  background: var(--accent);
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+/* Code line styles */
+.code-line { font-family: 'Space Mono', monospace; font-size: 0.68rem; line-height: 1.9; color: var(--text-muted); }
+.code-line .k { color: var(--accent2); }
+.code-line .s { color: var(--accent); }
+.code-line .c { color: #7b8496; }
+.code-line .f { color: var(--accent3); }
+
+/* Chip styles */
+.chip {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.858rem;
+  letter-spacing: 0.06em;
+  padding: 0.396rem 1.056rem;
+  border-radius: 3px;
+  border: 0.5px solid;
+  transition: all 0.2s;
+  cursor: default;
+}
+.chip-green { background: rgba(0,255,157,0.08); border-color: rgba(0,255,157,0.25); color: #00ff9d; }
+.chip-purple { background: rgba(123,97,255,0.08); border-color: rgba(123,97,255,0.25); color: #7b61ff; }
+.chip-blue { background: rgba(0,200,255,0.08); border-color: rgba(0,200,255,0.25); color: #00c8ff; }
+.chip-gray { background: rgba(232,234,240,0.05); border-color: rgba(232,234,240,0.1); color: var(--text-muted); }
+.chip-lavender { background: rgba(160,130,255,0.08); border-color: rgba(160,130,255,0.22); color: #a082ff; }
+.chip:hover { transform: translateY(-1px); }
+
+/* Stack pill */
+.stack-pill {
+  font-size: 0.58rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+  background: rgba(123,97,255,0.1);
+  border: 0.5px solid rgba(123,97,255,0.2);
+  color: #7b61ff;
+  font-family: 'Space Mono', monospace;
+}
+
+/* Project card hover arrow */
+.project-card:hover .project-arrow {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 8px rgba(0,255,157,0.4);
+}
+
+.project-arrow {
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+/* Skill icon pseudo-element */
+.skill-icon::before {
+  content: '>';
+  color: var(--accent);
+}
+
+/* Chat balloon animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.chat-balloon {
+  animation: float 3s ease-in-out infinite;
+}
+
+.chat-balloon:hover {
+  animation-play-state: paused;
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="235 170 330 310">
+  <!-- Red diamond -->
+  <polygon points="400,180 430,220 400,260 370,220"
+           fill="#c62828"/>
+
+  <!-- Crown -->
+  <g fill="none" stroke="#e8eaf0" stroke-width="10" stroke-linejoin="round">
+    <path d="M250 360 L300 300 L350 360 L400 300 L450 360 L500 300 L550 360 L550 430 L250 430 Z"/>
+    <rect x="260" y="430" width="280" height="40" />
+  </g>
+</svg>
