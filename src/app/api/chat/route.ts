@@ -31,41 +31,40 @@ Keep responses concise and friendly. If asked something unrelated to Yure, polit
 export async function POST(req: NextRequest) {
   const { message } = await req.json();
 
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.OPENROUTER_API_KEY;
 
   if (!apiKey) {
     return NextResponse.json({
       reply:
-        "The chat feature is not configured yet. Please set the GEMINI_API_KEY environment variable.",
+        "The chat feature is not configured yet. Please set the OPENROUTER_API_KEY environment variable.",
     });
   }
 
   try {
-    const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          system_instruction: {
-            parts: [{ text: SYSTEM_PROMPT }],
-          },
-          contents: [
-            {
-              parts: [{ text: message }],
-            },
-          ],
-        }),
-      }
-    );
+    const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "google/gemini-2.5-flash-lite",
+        max_tokens: 512,
+        messages: [
+          { role: "system", content: SYSTEM_PROMPT },
+          { role: "user", content: message },
+        ],
+      }),
+    });
 
     const data = await res.json();
     const reply =
-      data?.candidates?.[0]?.content?.parts?.[0]?.text ??
+      data?.choices?.[0]?.message?.content ??
       "Sorry, I couldn't generate a response.";
 
     return NextResponse.json({ reply });
-  } catch {
+  } catch (error) {
+    console.error("Chat API error:", error);
     return NextResponse.json({
       reply: "Sorry, something went wrong. Please try again later.",
     });

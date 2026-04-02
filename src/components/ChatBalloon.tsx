@@ -146,7 +146,7 @@ export default function ChatBalloon() {
                 color: "var(--text-muted)",
               }}
             >
-              Gemini AI
+              AI Assistant
             </span>
           </div>
 
