@@ -79,7 +79,7 @@ export default function Projects() {
       >
         {/* Featured project */}
         <a
-          href="https://king-poker-360ce.web.app"
+          href="https://king-poker.ymoutella.com.br"
           target="_blank"
           rel="noopener noreferrer"
           className="project-card project-card-featured"
@@ -140,8 +140,16 @@ export default function Projects() {
                 padding: "2rem",
               }}
             >
-              <polygon points="400,180 430,220 400,260 370,220" fill="#c62828" />
-              <g fill="none" stroke="#e8eaf0" strokeWidth="10" strokeLinejoin="round">
+              <polygon
+                points="400,180 430,220 400,260 370,220"
+                fill="#c62828"
+              />
+              <g
+                fill="none"
+                stroke="#e8eaf0"
+                strokeWidth="10"
+                strokeLinejoin="round"
+              >
                 <path d="M250 360 L300 300 L350 360 L400 300 L450 360 L500 300 L550 360 L550 430 L250 430 Z" />
                 <rect x="260" y="430" width="280" height="40" />
               </g>
