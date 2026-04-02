@@ -7,6 +7,7 @@ export default function Footer() {
 
   return (
     <footer
+      className="footer-container"
       style={{
         position: "relative",
         zIndex: 1,
@@ -25,7 +26,7 @@ export default function Footer() {
           color: "var(--text-muted)",
         }}
       >
-        Yure Moutella
+        yure.dev
       </div>
       <div
         style={{

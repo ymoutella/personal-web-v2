@@ -16,6 +16,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
+      className="experience-section"
       style={{ position: "relative", zIndex: 1, padding: "0 3rem 4rem" }}
     >
       <div style={{ marginBottom: "2.4rem" }}>
@@ -49,6 +50,7 @@ export default function Experience() {
         {experiences.map((exp, i) => (
           <div
             key={i}
+            className="exp-item-row"
             style={{
               display: "grid",
               gridTemplateColumns: "180px 1fr",

@@ -12,6 +12,7 @@ export default function Navbar() {
 
   return (
     <nav
+      className="nav-container"
       style={{
         position: "fixed",
         top: 0,
@@ -37,9 +38,10 @@ export default function Navbar() {
           letterSpacing: "-0.02em",
         }}
       >
-        Yure Moutella
+        yure<span style={{ color: "var(--accent)" }}>.</span>dev
       </div>
       <ul
+        className="nav-links-list"
         style={{
           display: "flex",
           gap: "2rem",
@@ -70,7 +72,7 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
-      <div style={{ display: "flex", gap: "0.8rem", alignItems: "center" }}>
+      <div className="nav-actions" style={{ display: "flex", gap: "0.8rem", alignItems: "center" }}>
         <div
           style={{
             display: "flex",
@@ -93,7 +95,9 @@ export default function Navbar() {
                     : "transparent",
                 border: "none",
                 borderRight:
-                  lang.value === "en" ? "0.5px solid var(--accent2)" : "none",
+                  lang.value === "en"
+                    ? "0.5px solid var(--accent2)"
+                    : "none",
                 color:
                   locale === lang.value
                     ? "var(--text-main)"

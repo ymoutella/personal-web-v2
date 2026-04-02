@@ -14,6 +14,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
+      className="skills-section"
       style={{ position: "relative", zIndex: 1, padding: "0 3rem 4rem" }}
     >
       <div style={{ marginBottom: "2.4rem" }}>
@@ -44,6 +45,7 @@ export default function Skills() {
       </div>
 
       <div
+        className="skills-grid-container"
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",

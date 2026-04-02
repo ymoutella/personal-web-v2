@@ -93,6 +93,7 @@ export default function ChatBalloon() {
       {/* Chat modal */}
       {isOpen && (
         <div
+          className="chat-modal"
           style={{
             position: "fixed",
             bottom: "6rem",

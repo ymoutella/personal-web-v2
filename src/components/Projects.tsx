@@ -8,9 +8,11 @@ export default function Projects() {
   return (
     <section
       id="projects"
+      className="projects-section"
       style={{ position: "relative", zIndex: 1, padding: "4rem 3rem" }}
     >
       <div
+        className="projects-header"
         style={{
           display: "flex",
           justifyContent: "space-between",
@@ -67,6 +69,7 @@ export default function Projects() {
       </div>
 
       <div
+        className="project-grid-container"
         style={{
           display: "grid",
           gridTemplateColumns: "1.4fr 1fr",
@@ -76,7 +79,7 @@ export default function Projects() {
       >
         {/* Featured project */}
         <div
-          className="project-card"
+          className="project-card project-card-featured"
           style={{
             background: "var(--card-bg)",
             backdropFilter: "blur(16px)",

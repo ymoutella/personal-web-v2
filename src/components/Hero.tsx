@@ -7,6 +7,7 @@ export default function Hero() {
 
   return (
     <section
+      className="hero-section"
       style={{
         position: "relative",
         zIndex: 1,
@@ -34,6 +35,7 @@ export default function Hero() {
       </div>
 
       <h1
+        className="hero-title-text"
         style={{
           fontFamily: "'Space Mono', monospace",
           fontSize: "clamp(2.2rem, 5.5vw, 4.8rem)",
@@ -54,6 +56,7 @@ export default function Hero() {
       </h1>
 
       <p
+        className="hero-sub-text"
         style={{
           fontSize: "0.95rem",
           fontWeight: 300,
@@ -67,6 +70,7 @@ export default function Hero() {
       </p>
 
       <div
+        className="hero-chips"
         style={{
           display: "flex",
           flexDirection: "column",
@@ -141,6 +145,7 @@ export default function Hero() {
 
       {/* Terminal card */}
       <div
+        className="hero-terminal"
         style={{
           position: "absolute",
           right: "3rem",

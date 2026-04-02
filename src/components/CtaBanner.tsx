@@ -7,6 +7,7 @@ export default function CtaBanner() {
 
   return (
     <div
+      className="cta-banner-container"
       style={{
         position: "relative",
         zIndex: 1,
