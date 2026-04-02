@@ -78,7 +78,10 @@ export default function Projects() {
         }}
       >
         {/* Featured project */}
-        <div
+        <a
+          href="https://king-poker-360ce.web.app"
+          target="_blank"
+          rel="noopener noreferrer"
           className="project-card project-card-featured"
           style={{
             background: "var(--card-bg)",
@@ -92,6 +95,8 @@ export default function Projects() {
             gridRow: "span 2",
             display: "flex",
             flexDirection: "column",
+            textDecoration: "none",
+            color: "inherit",
           }}
         >
           <div
@@ -220,7 +225,7 @@ export default function Projects() {
               ))}
             </div>
           </div>
-        </div>
+        </a>
 
         {/* Project 2 */}
         <ProjectCard
